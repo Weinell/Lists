@@ -16,9 +16,9 @@ class ListTest {
 
     }
 
+
     @org.junit.jupiter.api.Test
     void insertFromHead() {
-
 
 
     }
@@ -33,5 +33,17 @@ class ListTest {
 
         assertEquals("321",list.printFromHead());
     }
+
+    @org.junit.jupiter.api.Test
+    void printListFromTail()    {
+
+        list.insertFromTail("1");
+        list.insertFromTail("2");
+        list.insertFromTail("3");
+
+
+        assertEquals("321",list.printFromTail());
+    }
+
 
 }

@@ -1,3 +1,5 @@
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ListTest {
@@ -20,4 +22,16 @@ class ListTest {
 
 
     }
+
+    @org.junit.jupiter.api.Test
+    void printListFromHead()    {
+
+        list.insertFromHead("1");
+        list.insertFromHead("2");
+        list.insertFromHead("3");
+
+
+        assertEquals("321",list.printFromHead());
+    }
+
 }

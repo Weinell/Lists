@@ -32,5 +32,17 @@ public class List {
 
         return head;
     }
+
+    public String printFromHead() {
+
+        Node n = tail;
+        String res = "";
+
+        while (n != null)   {
+            res = res + n.data;
+            n = n.next;
+        }
+        return res;
+    }
 }
 

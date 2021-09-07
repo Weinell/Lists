@@ -7,4 +7,30 @@ public class List {
     // new node.next = head
     // head = new node
 
+    public boolean isEmpty()    {
+
+        if (head == null)   {
+            return true;
+        }
+        return false;
+    }
+
+
+    public Node insertFromHead(String s)    {
+
+        Node node = new Node(s);
+
+        if (isEmpty())  {
+            head = node;
+            tail = node;
+            return head;
+        }
+
+        head.prev = node;
+        node.next = head;
+        head = node;
+
+        return head;
+    }
 }
+

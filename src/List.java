@@ -25,12 +25,26 @@ public class List {
             tail = node;
             return head;
         }
-
         head.prev = node;
         node.next = head;
         head = node;
 
         return head;
+    }
+
+    public Node insertFromTail(String s)    {
+        Node node = new Node(s);
+
+        if (isEmpty())  {
+            head = node;
+            tail = node;
+            return tail;
+        }
+        tail.next = node;
+        node.prev = tail;
+        tail = node;
+
+        return tail;
     }
 
     public String printFromHead() {

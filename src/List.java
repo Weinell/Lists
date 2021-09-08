@@ -101,7 +101,7 @@ public class List {
             return n;
         }
 
-        while (n != head)   {
+        while (n != null)   {
 
             if (n.data == s)    {
 
@@ -110,8 +110,9 @@ public class List {
             n = n.next;
         }
         return n;
-
     }
+
+
 
 }
 

@@ -92,5 +92,26 @@ public class List {
         return head;
 
     }
+
+    public Node findElement(String s)   {
+
+        Node n = new Node("");
+
+        if (isEmpty())  {
+            return n;
+        }
+
+        while (n != head)   {
+
+            if (n.data == s)    {
+
+                return n;
+            }
+            n = n.next;
+        }
+        return n;
+
+    }
+
 }
 

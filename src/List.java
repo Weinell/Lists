@@ -73,8 +73,7 @@ public class List {
 
     public Node removeFromHead() {
 
-        Node n = new Node("");
-        String res = "";
+        Node n = head;
 
         if (isEmpty())  {
 
@@ -88,22 +87,20 @@ public class List {
 
             return n;
         }
-
         return head;
-
     }
 
-    public Node findElement(String s)   {
+    public Node findElement(String s) {
 
-        Node n = new Node("");
+        Node n = head;
 
-        if (isEmpty())  {
+        if (isEmpty()) {
             return n;
         }
 
-        while (n != null)   {
+        while (n != null) {
 
-            if (n.data == s)    {
+            if (n.data.equals(s)) {
 
                 return n;
             }
@@ -112,14 +109,27 @@ public class List {
         return n;
     }
 
-/*
-    public Node removeNode(String s)    {
+    public void removeNode(String s)    {
 
+        Node n = head;
 
+        if (isEmpty())  {
 
+            return;
+        }
 
+        while (n != null) {
+
+            if (n.data == s) {
+
+                n.next.prev = null;
+                n.prev.next = null;
+
+                n.prev.next = n.next;
+                n.next.prev = n.prev;
+            }
+            n = n.next;
+        }
     }
-*/
-
 }
 

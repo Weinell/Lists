@@ -69,5 +69,28 @@ public class List {
         }
         return res;
     }
+
+
+    public Node removeFromHead() {
+
+        Node n = new Node("");
+        String res = "";
+
+        if (isEmpty())  {
+
+            return n;
+        }
+        if (head == tail)   {
+
+            n = head;
+            head = null;
+            tail = null;
+
+            return n;
+        }
+
+        return head;
+
+    }
 }
 

@@ -112,7 +112,14 @@ public class List {
         return n;
     }
 
+/*
+    public Node removeNode(String s)    {
 
+
+
+
+    }
+*/
 
 }
 

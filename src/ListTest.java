@@ -73,6 +73,16 @@ class ListTest {
     }
 
     @org.junit.jupiter.api.Test
+    void findElement()  {
+
+        Node node = new Node("1");
+        Node node3 = new Node("3");
+        Node node2 = new Node("2");
+        list.insertFromHead(node.data);
+
+        assertEquals(node.data, list.findElement(node.data));
+
+    }
 
 
 

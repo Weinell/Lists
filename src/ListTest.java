@@ -29,7 +29,7 @@ class ListsTest {
     void isEmpty() {
 
         assertEquals(true, list.isEmpty());
-        list.insertFromHead("Viktor");
+        list.insertFromHead(new Node("Viktor"));
         assertEquals(false, list.isEmpty());
 
     }
@@ -44,9 +44,9 @@ class ListsTest {
     @org.junit.jupiter.api.Test
     void printListFromHead()    {
 
-        list.insertFromHead("1");
-        list.insertFromHead("2");
-        list.insertFromHead("3");
+        list.insertFromHead(new Node("1"));
+        list.insertFromHead(new Node("2"));
+        list.insertFromHead(new Node("3"));
 
 
         assertEquals("321",list.printFromHead());
@@ -77,9 +77,9 @@ class ListsTest {
         Node node = new Node("1");
         Node node3 = new Node("3");
         Node node2 = new Node("2");
-        list.insertFromHead(node.data);
-        list.insertFromHead(node2.data);
-        list.insertFromHead(node3.data);
+        list.insertFromHead(node);
+        list.insertFromHead(node2);
+        list.insertFromHead(node3);
 
         assertEquals("2", list.findElement("2").data);
 
@@ -95,13 +95,13 @@ class ListsTest {
         Node node5 = new Node("5");
         Node node9 = new Node("9");
         Node node7 = new Node("7");
-        list.insertFromHead(node.data);
-        list.insertFromHead(node2.data);
-        list.insertFromHead(node3.data);
-        list.insertFromHead(node15.data);
-        list.insertFromHead(node5.data);
-        list.insertFromHead(node9.data);
-        list.insertFromHead(node7.data);
+        list.insertFromHead(node);
+        list.insertFromHead(node2);
+        list.insertFromHead(node3);
+        list.insertFromHead(node15);
+        list.insertFromHead(node5);
+        list.insertFromHead(node9);
+        list.insertFromHead(node7);
 
         list.removeNode("2");
 
@@ -113,25 +113,18 @@ class ListsTest {
     @Test
     void insertNode()   {
 
-        Node node = new Node("1");
-        Node node3 = new Node("3");
-        Node node2 = new Node("2");
-        Node node15 = new Node("15");
-        Node node5 = new Node("5");
-        Node node9 = new Node("9");
 
-        Node node7 = new Node("7");
-        list.insertFromHead(node.data);
-        list.insertFromHead(node2.data);
-        list.insertFromHead(node3.data);
-        list.insertFromHead(node15.data);
-        list.insertFromHead(node5.data);
-        list.insertFromHead(node9.data);
-        list.insertFromHead(node7.data);
+        list.insertFromHead(new Node("1"));
+        list.insertFromHead(new Node("2"));
+        list.insertFromHead(new Node("3"));
+        list.insertFromHead(new Node("4"));
+        list.insertFromHead(new Node("5"));
+        list.insertFromHead(new Node("6"));
+        list.insertFromHead(new Node("7"));
 
-        list.insertNode("9","42");
+        list.insertNode(list.findElement("3"),"tsukani");
 
-        assertEquals("1231559427",list.printFromTail());
+        assertEquals("123tsukani4567",list.printFromTail());
 
     }
 

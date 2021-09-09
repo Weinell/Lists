@@ -19,9 +19,8 @@ public class List {
     }
 
 
-    public Node insertFromHead(String s) {
+    public Node insertFromHead(Node node) {
 
-        Node node = new Node(s);
 
         if (isEmpty()) {
             head = node;
@@ -68,7 +67,7 @@ public class List {
         String res = "";
 
         while (n != null) {
-            res = res + n.data;
+            res += n.data;
             n = n.prev;
         }
         return res;
@@ -137,20 +136,14 @@ public class List {
         }
     }
 
-    public void insertNode(String neighbour, String in) {
+    public void insertNode(Node neighbour, String in) {
 
-        Node node = new Node(in);
-
-        findElement(neighbour);
-
-        if (isEmpty()) {
-
-            return;
-        }
+        Node newnode = new Node(in);
 
 
-
-
+        Node oldNodes = neighbour.prev;
+        neighbour.prev = newnode;
+        newnode.prev = oldNodes;
     }
 
 

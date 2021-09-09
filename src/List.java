@@ -136,14 +136,12 @@ public class List {
         }
     }
 
-    public void insertNode(Node neighbour, String in) {
-
-        Node newnode = new Node(in);
+    public void insertNode(Node neighbour, Node newNodeIn) {
 
 
         Node oldNodes = neighbour.prev;
-        neighbour.prev = newnode;
-        newnode.prev = oldNodes;
+        neighbour.prev = newNodeIn;
+        newNodeIn.prev = oldNodes;
     }
 
 

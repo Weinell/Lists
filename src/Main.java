@@ -11,7 +11,7 @@ public class Main {
         list.insertFromHead(new Node("6"));
         list.insertFromHead(new Node("7"));
 
-        list.insertNode(list.findElement("3"),"tsukani");
+        list.insertNode(list.findElement("3"),new Node("tsukani"));
 
 
     }

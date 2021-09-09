@@ -34,8 +34,7 @@ public class List {
         return head;
     }
 
-    public Node insertFromTail(String s) {
-        Node node = new Node(s);
+    public Node insertFromTail(Node node) {
 
         if (isEmpty()) {
             head = node;

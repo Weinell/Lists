@@ -52,7 +52,7 @@ class ListsTest {
         assertEquals("321",list.printFromHead());
     }
 
-    @org.junit.jupiter.api.Test
+    /*@org.junit.jupiter.api.Test
     void printListFromTail()    {
 
         list.insertFromTail("1");
@@ -61,7 +61,7 @@ class ListsTest {
 
 
         assertEquals("321",list.printFromTail());
-    }
+    }*/
 
     @org.junit.jupiter.api.Test
     void removeFromHead()   {
@@ -129,4 +129,27 @@ class ListsTest {
     }
 
 
+    @Test
+    void insertNodeEmpty()  {
+
+
+        Node node1 = new Node("1");
+        Node node2 = new Node("2");
+        Node node3 = new Node("3");
+
+        list.insertFromHead(node1);
+        list.insertFromTail(node3);
+
+        list.insertNode(list.findElement("1"),node2);
+
+        System.out.println(node1.prev);
+        System.out.println(node1.next);
+        System.out.println(node2.prev);
+        System.out.println(node2.next);
+        System.out.println(node3.prev);
+        System.out.println(node3.next);
+
+
+        assertEquals("123",list.printFromTail());
+    }
 }

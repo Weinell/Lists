@@ -1,26 +1,29 @@
+import java.util.Scanner;
+
 public class List {
 
     Node head = null;
     Node tail = null;
+    int size = 1;
 
     // head.prev = new node
     // new node.next = head
     // head = new node
 
-    public boolean isEmpty()    {
+    public boolean isEmpty() {
 
-        if (head == null)   {
+        if (head == null) {
             return true;
         }
         return false;
     }
 
 
-    public Node insertFromHead(String s)    {
+    public Node insertFromHead(String s) {
 
         Node node = new Node(s);
 
-        if (isEmpty())  {
+        if (isEmpty()) {
             head = node;
             tail = node;
             return head;
@@ -32,10 +35,10 @@ public class List {
         return head;
     }
 
-    public Node insertFromTail(String s)    {
+    public Node insertFromTail(String s) {
         Node node = new Node(s);
 
-        if (isEmpty())  {
+        if (isEmpty()) {
             head = node;
             tail = node;
             return tail;
@@ -52,18 +55,19 @@ public class List {
         Node n = head;
         String res = "";
 
-        while (n != null)   {
+        while (n != null) {
             res = res + n.data;
             n = n.next;
         }
         return res;
     }
+
     public String printFromTail() {
 
         Node n = tail;
         String res = "";
 
-        while (n != null)   {
+        while (n != null) {
             res = res + n.data;
             n = n.prev;
         }
@@ -75,11 +79,11 @@ public class List {
 
         Node n = head;
 
-        if (isEmpty())  {
+        if (isEmpty()) {
 
             return n;
         }
-        if (head == tail)   {
+        if (head == tail) {
 
             n = head;
             head = null;
@@ -104,16 +108,17 @@ public class List {
 
                 return n;
             }
+            size++;
             n = n.next;
         }
         return n;
     }
 
-    public void removeNode(String s)    {
+    public void removeNode(String s) {
 
         Node n = head;
 
-        if (isEmpty())  {
+        if (isEmpty()) {
 
             return;
         }
@@ -131,5 +136,57 @@ public class List {
             n = n.next;
         }
     }
-}
 
+    public void insertNode(String neighbour, String in) {
+
+        Node node = new Node(in);
+
+        findElement(neighbour);
+
+        if (isEmpty()) {
+
+            return;
+        }
+
+
+
+
+    }
+
+
+    public void removeLeftTether(String s) {
+
+        Node n = head;
+
+        if (isEmpty()) {
+
+            return;
+        }
+
+        if (n != null) {
+
+            if (n.data == s) {
+
+                n.next.prev = null;
+            }
+        }
+    }
+
+    public void removeRightTether(String s) {
+
+        Node n = head;
+
+        if (isEmpty()) {
+
+            return;
+        }
+
+        if (n != null) {
+
+            if (n.data == s) {
+
+                n.prev.next = null;
+            }
+        }
+    }
+}

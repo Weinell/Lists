@@ -1,10 +1,9 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.common.input.NoopCharAppender;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ListTest {
+class ListsTest {
 
     List list = new List();
 
@@ -92,15 +91,49 @@ class ListTest {
         Node node = new Node("1");
         Node node3 = new Node("3");
         Node node2 = new Node("2");
+        Node node15 = new Node("15");
+        Node node5 = new Node("5");
+        Node node9 = new Node("9");
+        Node node7 = new Node("7");
         list.insertFromHead(node.data);
         list.insertFromHead(node2.data);
         list.insertFromHead(node3.data);
+        list.insertFromHead(node15.data);
+        list.insertFromHead(node5.data);
+        list.insertFromHead(node9.data);
+        list.insertFromHead(node7.data);
 
         list.removeNode("2");
 
-        assertEquals("13",list.printFromTail());
+        System.out.println(list.printFromTail());
+
+        assertEquals("1315597",list.printFromTail());
     }
 
+    @Test
+    void insertNode()   {
+
+        Node node = new Node("1");
+        Node node3 = new Node("3");
+        Node node2 = new Node("2");
+        Node node15 = new Node("15");
+        Node node5 = new Node("5");
+        Node node9 = new Node("9");
+
+        Node node7 = new Node("7");
+        list.insertFromHead(node.data);
+        list.insertFromHead(node2.data);
+        list.insertFromHead(node3.data);
+        list.insertFromHead(node15.data);
+        list.insertFromHead(node5.data);
+        list.insertFromHead(node9.data);
+        list.insertFromHead(node7.data);
+
+        list.insertNode("9","42");
+
+        assertEquals("1231559427",list.printFromTail());
+
+    }
 
 
 }

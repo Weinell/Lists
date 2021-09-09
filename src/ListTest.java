@@ -79,9 +79,26 @@ class ListTest {
         Node node3 = new Node("3");
         Node node2 = new Node("2");
         list.insertFromHead(node.data);
+        list.insertFromHead(node2.data);
+        list.insertFromHead(node3.data);
 
-        assertEquals(node.data, list.findElement(node.data));
+        assertEquals("2", list.findElement("2").data);
 
+    }
+
+    @Test
+    void removeNode()    {
+
+        Node node = new Node("1");
+        Node node3 = new Node("3");
+        Node node2 = new Node("2");
+        list.insertFromHead(node.data);
+        list.insertFromHead(node2.data);
+        list.insertFromHead(node3.data);
+
+        list.removeNode("2");
+
+        assertEquals("13",list.printFromTail());
     }
 
 
